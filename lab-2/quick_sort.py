@@ -1,8 +1,13 @@
-def quick_sort(arr):
+def quick_sort(arr, type='average'):
     if len(arr) <= 1:
         return arr
-    pivot = arr[len(arr) // 2]
+    if type == 'average':
+        pivot = arr[0]
+    elif type == 'best':
+        pivot = arr[len(arr) // 2]
+    elif type == 'worst':
+        pivot = arr[len(arr) - 1]
     left = [x for x in arr if x < pivot]
     middle = [x for x in arr if x == pivot]
     right = [x for x in arr if x > pivot]
-    return quick_sort(left) + middle + quick_sort(right)
+    return quick_sort(left, type) + middle + quick_sort(right, type)
