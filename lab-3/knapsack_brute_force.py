@@ -19,9 +19,3 @@ def knapsack_brute_force(values, weights, capacity):
 
     explore(0, 0, 0)
     return max_value
-
-
-values = [60, 100, 120]
-weights = [10, 20, 30]
-capacity = 50
-print(knapsack_brute_force(values, weights, capacity))  # Output: 220
